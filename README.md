@@ -1,16 +1,16 @@
-# AeroGear Services Android SDK
+# Aerobase Services Android SDK
 
-[![circle-ci](https://img.shields.io/circleci/project/github/aerogear/aerogear-android-sdk/master.svg)](https://circleci.com/gh/aerogear/aerogear-android-sdk)
+[![circle-ci](https://img.shields.io/circleci/project/github/aerobase/aerobase-android-sdk/master.svg)](https://circleci.com/gh/aerobase/aerobase-android-sdk)
 [![License](https://img.shields.io/badge/-Apache%202.0-blue.svg)](https://opensource.org/s/Apache-2.0)
 
-|                 | Project Info                                                     |
-| --------------- | ---------------------------------------------------------------- |
-| License:        | Apache License, Version 2.0                                      |
-| Build:          | Gradle                                                           |
-| Documentation:  | https://aerogear.org/android/                                    |
-| Issue tracker:  | https://issues.jboss.org/browse/AGDROID                          |
-| Mailing lists:  | [aerogear-users](http://aerogear-users.1116366.n5.nabble.com/)   | 
-|                 | [aerogear-dev](https://groups.google.com/forum/#!forum/aerogear) |
+|                 | Project Info                                                              	|
+| --------------- | --------------------------------------------------------------------------- |
+| License:        | Apache License, Version 2.0                                      		|
+| Build:          | Gradle                                                           		|
+| Documentation:  | https://aerobase.atlassian.net/wiki/display/ARB/Android          		|
+| Issue tracker:  | https://aerobase.atlassian.net/secure/RapidBoard.jspa?projectKey=ARBDROID   |
+| Mailing lists:  | 								     		|	 
+|                 | 								     		|
 
 ## Documentation
 
@@ -22,10 +22,11 @@
 
 ### List of SDKs
 
-AeroGear Services SDK consist of set of separate SDKs
+Aerobase Services SDK consist of set of separate SDKs
 
 - [Core](./docs/modules/getting-started/pages/core.adoc): Common base for all SDKs
 - [Auth](./docs/modules/getting-started/pages/auth.adoc):  Mobile authentication SDK
+- [Push](./docs/modules/getting-started/pages/push.adoc):  Mobile Push Notifications SDK
 
 ## License 
 
@@ -33,7 +34,7 @@ AeroGear Services SDK consist of set of separate SDKs
 
 ## Development
 
-If you would like to help develop AeroGear you can join our [developer's mailing list](https://groups.google.com/forum/#!forum/aerogear), join #aerogear on Freenode, or shout at us on Twitter @aerogears.
+If you would like to help develop Aerobase you can join our [developer's mailing list](https://groups.google.com/forum/#!forum/aerobase) or shout at us on Twitter @aerobaseOrg.
 
 Also takes some time and skim the [contributor guide](CONTRIBUTING.md)
 
@@ -55,11 +56,11 @@ To trigger the integration tests together with creation of PR, select the `test/
 
 **Metrics integration test**
 
-This includes testing of communication between Android SDK Metrics module and [AeroGear App Metrics service](https://github.com/aerogear/aerogear-app-metrics) (part of [Metrics-APB](https://github.com/aerogearcatalog/metrics-apb))
+This includes testing of communication between Android SDK Metrics module and [Aerobase App Metrics service](https://github.com/aerogear/aerogear-app-metrics) (part of [Metrics-APB](https://github.com/aerogearcatalog/metrics-apb))
 
 To run it locally:
 
-1. Edit [Metrics URL](https://github.com/aerogear/aerogear-android-sdk/blob/master/core/src/test/assets/integration-test-mobile-services.json#L11) with valid URL pointing to `/metrics` endpoint, e.g. https://app-metrics.example.com/metrics
+1. Edit [Metrics URL](https://github.com/aerobase/aerobase-android-sdk/blob/master/core/src/test/assets/integration-test-mobile-services.json#L11) with valid URL pointing to `/metrics` endpoint, e.g. https://app-metrics.example.com/metrics
 2. Run the test: `./gradlew :core:testDebug --tests *.IntegrationTestSuite`
 
 
@@ -69,8 +70,8 @@ See [General Contributing Guide](./CONTRIBUTING.md)
 
 ## Questions?
 
-Join our [user mailing list](https://groups.google.com/forum/#!forum/aerogear) for any questions or help! We really hope you enjoy app development with AeroGear!
+Join our [user mailing list](https://groups.google.com/forum/#!forum/aerobase) for any questions or help! We really hope you enjoy app development with AeroGear!
 
 ## Found a bug?
 
-If you found a bug please create a ticket for us on [Jira](https://issues.jboss.org/browse/AGDROID) with some steps to reproduce it.
+If you found a bug please create a ticket for us on [Jira](https://aerobase.atlassian.net/secure/RapidBoard.jspa?projectKey=ARBDROID) with some steps to reproduce it.

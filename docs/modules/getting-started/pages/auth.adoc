@@ -1,4 +1,4 @@
-= AeroGear Services Auth SDK
+= Aerobase Services Auth SDK
 
 Mobile authentication SDK based on link:http://www.keycloak.org/[Keycloak] using link:http://openid.net/connect/[OpenID Connect].
 

@@ -1,6 +1,6 @@
-== Getting Started with AeroGear Services Android SDK
+== Getting Started with Aerobase Services Android SDK
 
-Following guide provides general information for starting with AeroGear Services SDK.
+Following guide provides general information for starting with Aerobase Services SDK.
 
 == Prerequisites
 
@@ -35,12 +35,12 @@ In the build.gradle file of your app you can begin adding dependencies provided 
 ----
 dependencies {
     ...
-    implementation 'org.aerogear:core:0.1.0-2018-09'
-    implementation 'org.aerogear:auth:0.1.0-2018-09' // <- adjust to suit release version
+    implementation 'org.aerobase:android-core:0.1.0-RELEASE'
+    implementation 'org.aerobase:android-auth:0.1.0-RELEASE' // <- adjust to suit release version
 }
 ----
 
-A full list of releases can be viewed https://github.com/aerogear/aerogear-android-sdk/releases[here]
+A full list of releases can be viewed https://github.com/aerobase/aerobase-android-sdk/releases[here]
 
 == Installing Local Build of SDK
 
@@ -50,15 +50,15 @@ Alternatively the SDK can be installed manually instead of using a published ver
 
 [source, sh]
 ----
-git clone https://github.com/aerogear/aerogear-android-sdk
-cd aerogear-android-sdk
+git clone https://github.com/aerobase/aerobase-android-sdk
+cd aerbase-android-sdk
 ./gradlew install
 ----
 
 You can verify the install went well by checking your local maven repository
 
 ----
-ls ~/.m2/repository/org/aerogear
+ls ~/.m2/repository/org/aerobase
 
 # Should output auth core
 ----
@@ -85,8 +85,8 @@ In the build.gradle file of your app you can begin adding dependencies provided 
 ----
 dependencies {
     ...
-    implementation 'org.aerogear:core:5.0.0-SNAPSHOT'
-    implementation 'org.aerogear:auth:5.0.0-SNAPSHOT' //If you are using IDM services provided by KeyCloak
+    implementation 'org.aerobase:android-core:0.1.0-SNAPSHOT'
+    implementation 'org.aerogear:android-auth:0.1.0-SNAPSHOT' //If you are using IDM services provided by KeyCloak
 }
 ----
 
@@ -96,31 +96,28 @@ In an example you can use the SDK as follows
 
 [source, java]
 ----
-
-public class MyApplication extends Application {
-
-    private MobileCore mobileCore;
-    private MetricsService metricsService;
-
+...
     @Override
-    public void onCreate() {
-        super.onCreate();
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
 
-        mobileCore = MobileCore.init(this);
-        metricsService = mobileCore.getInstance(MetricsService.class);
+        PushService pushService = MobileCore.getInstance().getService(PushService.class);
+        pushService.registerDevice(new Callback() {
+            @Override
+            public void onSuccess() {
+                MobileCore.getLogger().info("AB", "Successfully registered device to aerobase server");
+            }
 
-        metricsService.sendAppAndDeviceMetrics();
+            @Override
+            public void onError(Throwable error) {
+                new AppExecutors().mainThread().execute(() -> {
+                    MobileCore.getLogger().error("AB", error.getMessage(), error);
+                });
+            }
+        });
     }
-
-    @Override
-    public void onTerminate() {
-        super.onTerminate();
-
-        mobileCore.destroy();
-    }
-
-}
-
+...
 ----
 
 == Bill of materials
@@ -131,7 +128,7 @@ Gradle itself does not offer such a mechanism but it is a well known and used co
 
 In order to bring this functionality to Gradle the Android SDK relies on the link:https://github.com/spring-gradle-plugins/dependency-management-plugin[dependency management plugin] provided by Spring. This plugin allows us to use a standard Maven BOM in a Gradle project.
 
-== Setting up project to use any AeroGear Services SDK
+== Setting up project to use any Aerobase Services SDK
 
 1. Add gradle plugin to 
 At the top of your gradle build file (but below `buildscripts`) add the plugin itself:
@@ -172,7 +169,7 @@ subprojects {
 
 ----
 dependencies {
-    implementation group: 'org.aerogear', name: 'core'
+    implementation group: 'org.aerobase', name: 'core'
 }
 ----
 
