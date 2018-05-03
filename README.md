@@ -7,7 +7,9 @@
 | --------------- | --------------------------------------------------------------------------- |
 | License:        | Apache License, Version 2.0                                      		|
 | Build:          | Gradle                                                           		|
-| Documentation:  | https://aerobase.atlassian.net/wiki/display/ARB/Android          		|
+| Documentation:  | https://aerobase.atlassian.net/wiki/display/ARB/Android                     |
+|                 | https://aerobase.io                                 		        |
+|                 | http://aerobase.org								|
 | Issue tracker:  | https://aerobase.atlassian.net/secure/RapidBoard.jspa?projectKey=ARBDROID   |
 | Mailing lists:  | 								     		|	 
 |                 | 								     		|
