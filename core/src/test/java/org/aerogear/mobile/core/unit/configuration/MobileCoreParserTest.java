@@ -36,7 +36,7 @@ public class MobileCoreParserTest {
             assertNotNull(configs.get("metrics"));
 
             ServiceConfiguration keyCloakServiceConfiguration = configs.get("keycloak");
-            assertEquals("https://keycloak-myproject.192.168.64.74.nip.io/auth",
+            assertEquals("https://example.aerobase.io/auth",
                             keyCloakServiceConfiguration.getProperty("auth-server-url"));
         } catch (JSONException | IOException exception) {
             System.out.println(exception);

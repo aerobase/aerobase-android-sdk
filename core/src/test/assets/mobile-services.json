@@ -1,35 +1,27 @@
 {
     "version": "1.0",
-    "clusterName": "192.168.64.74:8443",
-    "namespace": "myproject",
+    "clusterName": "example.aerobase.io",
+    "namespace": "example",
     "clientId": "example_client_id",
     "services": [
-        {
-            "id": "fh-sync-server",
-            "name": "fh-sync-server",
-            "type": "fh-sync-server",
-            "url": "https://www.mocky.io/v2/5a6b59fb31000088191b8ac6",
-            "config": {
-            }
-        },
         {
             "id": "keycloak",
             "name": "keycloak",
             "type": "keycloak",
-            "url": "https://www.mocky.io/v2/5a6b59fb31000088191b8ac6",
+            "url": "https://example.aerobase.io",
             "config": {
-                "auth-server-url": "https://keycloak-myproject.192.168.64.74.nip.io/auth",
-                "realm": "myproject",
-                "resource": "juYAlRlhTyYYmOyszFa",
+                "auth-server-url": "https://example.aerobase.io/auth",
+                "realm": "example",
+                "resource": "example-client",
                 "ssl-required": "external",
-                "url": "https://keycloak-myproject.192.168.64.74.nip.io/auth"
+                "url": "https://example.aerobase.io/auth"
             }
         },
         {
             "id": "metrics",
             "name": "metrics",
             "type": "metrics",
-            "url": "https://www.mocky.io/v2/5a79c6572e000028009a5c4f",
+            "url": "https://example.aerobase.io/",
             "config": {}
         }
     ]

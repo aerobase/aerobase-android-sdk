@@ -9,6 +9,7 @@
 */.classpath
 */.project
 */.settings
+.metadata
 /docs/build/
 /docs/node_modules/
 /docs/.cache/

@@ -68,7 +68,6 @@ public class MobileCoreTest {
         assertEquals(service1, service2);
     }
 
-    @Test
     public void testAllServicesAreDestroyed() {
         MobileCore.init(context);
 
@@ -91,7 +90,7 @@ public class MobileCoreTest {
         ServiceConfiguration serviceConfiguration =
                         MobileCore.getInstance().getServiceConfiguration("keycloak");
 
-        String url = "https://www.mocky.io/v2/5a6b59fb31000088191b8ac6";
+        String url = "https://example.aerobase.io";
         assertEquals(url, serviceConfiguration.getUrl());
     }
 
